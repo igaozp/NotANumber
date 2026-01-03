@@ -1,3 +1,5 @@
+import { DNSVisual, DNSScrollVisual } from "./_components/dns";
+
 It's really easy to overlook the way the internet works. In JavaScript, we can make software that talks to other computers on the internet simply using a `fetch` call:
 
 ```js
@@ -18,7 +20,7 @@ Before your computer can connect to a website, it first has to _convert_ the dom
 
 <Callout>
 
-Try entering `142.250.73.110` into your browser's address bar. You'll end up in the Google home page!
+Try entering `142.250.73.110` into your browser's address bar. You'll end up on Google's home page!
 
 </Callout>
 
@@ -52,7 +54,7 @@ How do we organize our table to handle _tens of millions_ of requests per second
 
 ---
 
-<ScrollGroup>
+<ScrollGroup figure={<DNSScrollVisual />}>
 
 <ScrollGroupSection>
 
@@ -89,9 +91,7 @@ Putting everything together, we get our final lookup algorithm:
 1. Using the suffix of the domain, ask the root servers for the IP address of the group handling that suffix;
 2. Using the IP address of the group, ask the group's servers for the IP address of the domain.
 
-```
-dns visual
-```
+<DNSVisual />
 
 ---
 
